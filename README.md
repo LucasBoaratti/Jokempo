@@ -26,9 +26,9 @@ code .
 
 4. Verifique se o python está instalado em sua máquina e no VSCode;
 
-5. Se não tiver instalado na máquina, faça o download do python [aqui](https://www.python.org/)
+5. Se não tiver instalado na máquina, faça o download do python [aqui](https://www.python.org/);
 
-6. Instale o python no VSCode também (se já tiver instalado, ignore esse passo)
+6. Instale o python no VSCode também (se já tiver instalado, ignore esse passo);
 
 7. Após realizar o download do python, abra o terminal com CTRL + J ou CTRL + ' e rode esse comando:
 
