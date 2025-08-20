@@ -1,62 +1,68 @@
-import random #Importando a biblioteca random
+import random 
 
-def jokempo(): #Criando a função para o jogo
-    print("Seja bem-vindo(a) ao jokempô! Aqui você terá que vencer o computador em uma batalha de pedra, papel e tesoura.\n") #Exibindo a mensagem de boas vindas na tela/terminal
-    
-    print("Jogo criado por: Lucas Henrique Boaratti Silva.\n") #Exibindo a mensagem do criador do jogo na tela/terminal
+# Função do jogo
+def jokempo(): 
+    print("Seja bem-vindo(a) ao jokempô! Aqui você terá que vencer o computador em uma batalha de pedra, papel e tesoura.\n") 
+    print("Jogo criado por: Lucas Boaratti\n") 
 
-    print("Lembrete: as opções de escolha são: 1 - pedra, 2 - papel e 3 - tesoura.") #Exibindo as opções de escolha na tela
+    nome = input("Digite seu nome para começar a jogar: ")
+    print(f"Seja bem vindo(a), {nome}! Suas opções de escolha são: 1 - pedra, 2 - papel e 3 - tesoura.") 
 
-    opcoesEscolha = { #Criando um dicionário para as opções de escolha
+    # Opções de escolha clássicas do Jokempô
+    opcoesEscolha = { 
         1: "Pedra",
         2: "Papel",
         3: "Tesoura",
     }
 
-    pontosUsuario = 0 #Armazenando o valor 0 para a variável pontosUsuario
-    
-    pontosComputador = 0 #Armazenando o valor 0 para a variável pontosComputador
+    pontosUsuario = 0 
+    pontosComputador = 0 
 
-    while True: #Laço de repetição para jogar o jogo até o usuário parar
-        try: #Tentativa de executar o código do jogo
-            escolhaUsuario = input("\nDigite a sua escolha (caso queira parar o jogo, digite 0): ") #O usuário vai fazer a escolha dele
-            escolhaUsuario = int(escolhaUsuario) #Transformando a variável escolhaUsuario em inteiro
+    while True: 
+        try: 
+            escolhaUsuario = input("\nDigite a sua escolha (caso queira parar o jogo, digite 0): ") 
+            escolhaUsuario = int(escolhaUsuario) 
 
-            if escolhaUsuario == 0: #Verificando se o usuário escolheu o número 0
-                print("\nSaindo do jogo... Obrigado(a) por jogar!") #Exibindo a mensagem de agradecimento na tela/terminal   
-                break #Parando o programa
+            if escolhaUsuario == 0: 
+                print("\nSaindo do jogo... Obrigado(a) por jogar!") 
+                break 
             
-            if escolhaUsuario not in opcoesEscolha: #Verificando se o usuário escolheu uma opção inválida
-                print("Selecione uma opção válida!") #Exibindo a mensagem de aviso na tela/terminal
-                continue #Continuando o programa
+            # Verifica se o usuário escolher uma opção inválida
+            if escolhaUsuario not in opcoesEscolha: 
+                print("\nSelecione uma opção válida!") 
+                continue 
 
-            escolhaComputador = random.randint(1, 3) #O computador vai escolher um número aleatório para a sua jogada 
+            escolhaComputador = random.randint(1, 3) 
+            
+            # Exibe as escolhas de cada um dos competidores
+            print(f"Sua escolha: {opcoesEscolha[escolhaUsuario]}.") 
+            print(f"Escolha do computador: {opcoesEscolha[escolhaComputador]}.") 
 
-            print(f"\nSua escolha: {opcoesEscolha[escolhaUsuario]}.\n") #Exibindo a escolha do usuário na tela/terminal
+            # Verificações de pontuação
+            if escolhaUsuario == escolhaComputador: 
+                print("Jogo empatado!") 
+            elif (escolhaUsuario == 1 and escolhaComputador == 3) or (escolhaUsuario == 2 and escolhaComputador == 1) or (escolhaUsuario == 3 and escolhaComputador == 2): 
+                print(f"Ponto pro(a) {nome}!") 
 
-            print(f"Escolha do computador: {opcoesEscolha[escolhaComputador]}.\n") #Exibindo a escolha do computador na tela/terminal
-
-            if escolhaUsuario == escolhaComputador: #Verificando se a escolha do usuário foi igual a escolha do computador
-                print("Jogo empatado!\n") #Exibindo a mensagem de empate na tela/terminal
-            elif (escolhaUsuario == 1 and escolhaComputador == 3) or (escolhaUsuario == 2 and escolhaComputador == 1) or (escolhaUsuario == 3 and escolhaComputador == 2): #Verificando se o usuário escolheu todas as possibilidades de vencer o computador
-                print("Parabéns, você venceu!\n") #Exibindo a mensagem de parabenização na tela/terminal
-                
-                pontosUsuario += 1 #Aumentando o placar do usuário
-            else: #Caso as opções acima sejam favoráveis para o computador...
-                print("Ops, você perdeu.\n") #Exibindo a mensagem de derrota na tela/terminal
+                pontosUsuario += 1 
+            else: 
+                print("Ponto pro Computador!") 
  
-                pontosComputador += 1 #Aumentando o placar do computador
+                pontosComputador += 1 
 
-            print(f"Placar: Usuário {pontosUsuario} X {pontosComputador} Computador.") #Exibindo o placar na tela/terminal
+            print(f"\nPlacar: Usuário {pontosUsuario} X {pontosComputador} Computador.") 
 
-            if pontosUsuario == 15:
-                print("\nParabéns. Você é o vencedor do jokempô!!! 🥳")
-                print(f"\nPlacar final: Usuário {pontosUsuario} X {pontosComputador} Computador.")
+            # Verificações de placares para cada um dos competidores
+            if pontosUsuario == 15: 
+                print("\nParabéns! Você é o vencedor do jokempô!!! 🥳")
+                print(f"\nPlacar final: {nome} {pontosUsuario} X {pontosComputador} Computador.")
+                break
             elif pontosComputador == 15:
-                print("\nQue pena, você perdeu! ☹️")
-                print(f"\nPlacar final: Usuário {pontosUsuario} X {pontosComputador} Computador.")
+                print("\nQue pena, você perdeu! Tente novamente. ☹️")
+                print(f"\nPlacar final: {nome} {pontosUsuario} X {pontosComputador} Computador.")
+                break
 
         except ValueError: #Caso o usuário digite um valor errado...
-            print("\nInsira apenas números inteiros!") #Exibindo a mensagem de aviso na tela/terminal
+            print("\nInsira apenas números inteiros!") 
 
 jokempo() #Executando a função 
