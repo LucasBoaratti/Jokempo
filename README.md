@@ -18,19 +18,25 @@ OBS: Certifique que o Git está instalado no seu computador. Caso não esteja, i
 git clone https://github.com/LucasBoaratti/Jokempo.git
 ```
 
-3. Agora, entre no VSCode:
+3. Acesse a pasta do projeto:
+
+```bash
+cd .\Jokempo
+```
+
+4. Agora, entre no VSCode:
 
 ```bash
 code .
 ```
 
-4. Verifique se o python está instalado em sua máquina e no VSCode;
+5. Verifique se o python está instalado em sua máquina e no VSCode;
 
-5. Se não tiver instalado na máquina, faça o download do python [aqui](https://www.python.org/);
+6. Se não tiver instalado na máquina, faça o download do python [aqui](https://www.python.org/);
 
-6. Instale o python no VSCode também (se já tiver instalado, ignore esse passo);
+7. Instale o python no VSCode também (se já tiver instalado, ignore esse passo);
 
-7. Após realizar o download do python, abra o terminal com CTRL + J ou CTRL + ' e rode esse comando:
+8. Após realizar o download do python, abra o terminal com CTRL + J ou CTRL + ' e rode esse comando:
 
 ```bash
 py .\Jokenpô.py
