@@ -36,7 +36,7 @@ code .
 py .\Jokenpô.py
 ```
 
-E pronto! Agora você pode jogar Jokempô com a máquina :D Que os jogos comecem e que a sorte esteja sempre a seu favor. 😉
+#### E pronto! Agora você pode jogar Jokempô com a máquina :D Que os jogos comecem e que a sorte esteja sempre a seu favor. 😉
 
 # ✂ Linguagens/ferramentas utilizadas no projeto ✂
 
